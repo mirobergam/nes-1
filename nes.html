@@ -369,6 +369,58 @@ summary {
 </div>
 
 
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      partyid7 ~ gender
+##  observations: 16590
+##  predictors:   2
+## ------
+##                  Median MAD_SD
+## (Intercept)      3.7    0.0   
+## gendernon-female 0.2    0.0   
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 2.1    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      partyid7 ~ race
+##  observations: 16590
+##  predictors:   3
+## ------
+##             Median MAD_SD
+## (Intercept) 2.1    0.1   
+## raceOther   1.3    0.1   
+## raceWhite   1.9    0.1   
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 2.0    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
+<pre><code>## stan_glm
+##  family:       gaussian [identity]
+##  formula:      partyid7 ~ real_ideo
+##  observations: 16590
+##  predictors:   2
+## ------
+##             Median MAD_SD
+## (Intercept) 1.0    0.0   
+## real_ideo   0.7    0.0   
+## 
+## Auxiliary parameter(s):
+##       Median MAD_SD
+## sigma 1.9    0.0   
+## 
+## ------
+## * For help interpreting the printed output see ?print.stanreg
+## * For info on the priors used see ?prior_summary.stanreg</code></pre>
 <div id="model-results" class="section level2">
 <h2>Model Results</h2>
 <p>Here is a nicely printed summary of my model results, showing the relationship between party ID, on a 1 through 7 scale, and ideology, also on a 1 through 7 scale. Although these are ordered categories, I treat both variables as continuous.</p>
@@ -388,7 +440,7 @@ Model Info:
  formula:      partyid7 ~ real_ideo
  algorithm:    sampling
  sample:       4000 (posterior sample size)
- priors:       see help(&#39;prior_summary&#39;)
+ priors:       see help('prior_summary')
  observations: 16590
  predictors:   2
 
@@ -402,18 +454,18 @@ Fit Diagnostics:
            mean   sd   10%   50%   90%
 mean_PPD 3.79   0.02 3.76  3.79  3.82 
 
-The mean_ppd is the sample average posterior predictive distribution of the outcome variable (for details see help(&#39;summary.stanreg&#39;)).
+The mean_ppd is the sample average posterior predictive distribution of the outcome variable (for details see help('summary.stanreg')).
 
 MCMC diagnostics
               mcse Rhat n_eff
-(Intercept)   0.00 1.00 3866 
-real_ideo     0.00 1.00 3940 
-sigma         0.00 1.00 3354 
-mean_PPD      0.00 1.00 3171 
-log-posterior 0.03 1.00 1874 
+(Intercept)   0.00 1.00 4030 
+real_ideo     0.00 1.00 3955 
+sigma         0.00 1.00 3445 
+mean_PPD      0.00 1.00 3481 
+log-posterior 0.03 1.00 1883 
 
 For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).</code></pre>
-<p>But that adds a bunch of junk, including run-off-the-page text. Maybe there are options in something like <code>print.stanmvreg()</code> which might be helpful.</p>
+<p>But that adds a bunch of junk, including run-off-the-page text. Maybe there are options in something like <code>print.stanmvreg()</code> which might be helpful. Has no one bothered to ask on RStudio Community?</p>
 </div>
 
 
